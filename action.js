@@ -158,6 +158,6 @@ $(document).ready(() => {
             historyData = [];
         historyData.push(data);
         localStorage.STRUCT304 = JSON.stringify(historyData);
+        alert("保存成功！（在浏览器终端输入eval(localStorage.STRUCT304)即可查看）")
     });
-
 });
