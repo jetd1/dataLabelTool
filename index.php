@@ -1,9 +1,13 @@
 <?php
+    $id_arr = array('jet', 'hyy');
     require('safe.php');
-    if (!isset($_GET['id']) or $_GET['id'] == '') {
+    if (!isset($_GET['id'])) {
         echo '<script>window.location = "./index.php?id=" + localStorage.id;</script>';
         die();
+    } else if (!in_array($_GET['id'], $id_arr)) {
+        echo '<script>delete localStorage.id;</script>';
     }
+    
 ?>
 <html>
 <head>
