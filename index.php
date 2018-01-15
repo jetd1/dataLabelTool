@@ -17,7 +17,7 @@
         or die("无法连接到数据库，请联系   jet@pku.edu.cn. err1");
         mysqli_select_db($database, "STRUCT")
         or die("无法选择数据库，请联系   jet@pku.edu.cn. err2");
-        $query = "SELECT * FROM STRUCT304 WHERE IMG='$img'";
+        $query = "SELECT * FROM STRUCT304 WHERE IMAGE='$img'";
         $result = mysqli_query($database, $query)
         or die("无法访问数据库-2，请联系jet@pku.edu.cn.");
         if (mysqli_num_rows($result) == 0) {
@@ -29,7 +29,7 @@
         $ffu = unserialize($row['FFU']);
         array_push($ffu, $id);
         $label = $label . "," . $cur_label . "]";
-        $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT=$label_cnt, FFU='$ffu' WHERE IMG='$img';";
+        $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT=$label_cnt, FFU='$ffu' WHERE IMAGE='$img';";
         mysqli_query($database, $query)
         or die("无法访问数据库-3，请联系jet@pku.edu.cn.");
     }
