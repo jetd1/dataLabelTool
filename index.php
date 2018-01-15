@@ -29,7 +29,7 @@
         $ffu = unserialize($row['FFU']);
         array_push($ffu, $id);
         $label = $label . "," . $cur_label . "]";
-        $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT=$label_cnt, FFU='$ffu' WHERE IMAGE='$img';";
+        $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT='$label_cnt', FFU='$ffu' WHERE IMAGE='$img';";
         mysqli_query($database, $query)
         or die("无法访问数据库-3，请联系jet@pku.edu.cn.");
     }
