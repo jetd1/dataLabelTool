@@ -7,6 +7,13 @@
     } else if (!in_array($_GET['id'], $id_arr)) {
         echo '<script>delete localStorage.id;</script>';
     }
+
+    if (isset($_POST['idString'])) {
+        echo $_POST['idString'];
+        echo $_POST['labelString'];
+        echo $_POST['imgSrc'];
+        die();
+    }
 ?>
 <html>
 <head>
