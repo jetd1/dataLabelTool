@@ -8,11 +8,30 @@
         echo '<script>delete localStorage.id;</script>';
     }
 
-    if (isset($_POST['idString'])) {
-        echo $_POST['idString'];
-        echo $_POST['labelString'];
-        echo $_POST['imgSrc'];
-        die();
+    if (isset($_POST['idString']) and in_array($_POST['idString'], $id_arr)) {
+        $id = $_POST['idString'];
+        $cur_label = $_POST['labelString'];
+        $img = $_POST['imgSrc'];
+
+        $database = mysqli_connect("localhost", "root", "JmsBryan123")
+        or die("无法连接到数据库，请联系   jet@pku.edu.cn. err1");
+        mysqli_select_db($database, "STRUCT")
+        or die("无法选择数据库，请联系   jet@pku.edu.cn. err2");
+        $query = "SELECT * FROM STRUCT304 WHERE IMG='$img'";
+        $result = mysqli_query($database, $query)
+        or die("无法访问数据库-2，请联系jet@pku.edu.cn.");
+        if (mysqli_num_rows($result) == 0) {
+            die("数据库错误，找不到项目" . $img . "，请联系jet@pku.edu.cn");
+        }
+        $row = mysqli_fetch_array($result);
+        $label_cnt = ((int) $row['LABEL_CNT']) + 1;
+        $label = substr($row['LABEL'], 0, strlen($row['LABEL']) - 1);
+        $ffu = unserialize($row['FFU']);
+        array_push($ffu, $id);
+        $label = $label . "," . $cur_label . "]";
+        $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT=$label_cnt, FFU='$ffu' WHERE IMG='$img';";
+        mysqli_query($database, $query)
+        or die("无法访问数据库-2，请联系jet@pku.edu.cn.");
     }
 ?>
 <html>
@@ -28,7 +47,7 @@
 
 <div id="bigDiv">
     <div id="workshopDiv">
-        <img id="baseImg" src="./data/1.jpg"/>
+        <img id="baseImg" src="./data/0001.jpg"/>
         <canvas id="workshop"></canvas>
     </div>
     <div id="toolsDiv">
