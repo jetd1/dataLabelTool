@@ -35,7 +35,7 @@
         
         $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT='$label_cnt', FFU='$ffu' WHERE IMAGE='$img';";
         mysqli_query($database, $query)
-        or die("无法访问数据库-3，请联系jet@pku.edu.cn.");
+        or die("无法访问数据库-3，请联系jet@pku.edu.cn." . $label);
     }
 ?>
 <html>
