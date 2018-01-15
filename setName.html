@@ -10,16 +10,16 @@
 <body>
 <div id="bigDiv">
     <form id="nameForn">
-        <p>请输入您被分配的id: <input type="text" id="name" /></p>
+        <p>请输入您被分配的id: <input type="text" id="name"/></p>
         <button id="submitBtn">提交</button>
     </form>
 </div>
 <script>
     $(document).ready(() => {
-        $("#submitBtn").onclick = () => {
+        $("#submitBtn").on("click", () => {
             localStorage.id = $("name").value;
             window.location = "./";
-        };
+        });
     });
 </script>
 </body>
