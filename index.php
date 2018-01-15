@@ -26,12 +26,14 @@
         $row = mysqli_fetch_array($result);
         $label_cnt = ((int) $row['LABEL_CNT']) + 1;
         $label = substr($row['LABEL'], 0, strlen($row['LABEL']) - 1);
+        $label = $label . "," . $cur_label . "]";
         $ffu = unserialize($row['FFU']);
         array_push($ffu, $id);
-        $label = $label . "," . $cur_label . "]";
+        $ffu = serialize($ffu);
+        
         $query = "UPDATE STRUCT304 SET LABEL='$label', LABEL_CNT='$label_cnt', FFU='$ffu' WHERE IMAGE='$img';";
         mysqli_query($database, $query)
-        or die("无法访问数据库-3，请联系jet@pku.edu.cn.");
+        or die("无法访问数据库-3，请联系jet@pku.edu.cn." . $label);
     }
 ?>
 <html>
