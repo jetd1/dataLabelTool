@@ -51,9 +51,9 @@
 
 <div id="bigDiv">
     <div id="workshopDiv">
-        <img id="baseImg" src="./data/"
+        <img id="baseImg" src=
         <?php
-            echo "0000.jpg\"";
+            echo "./data/0000.jpg";
         ?>
         />
         <canvas id="workshop"></canvas>
