@@ -16,7 +16,7 @@
     $(document).ready(() => {
         $("#submitBtn").on("click", () => {
             localStorage.id = $("#name").val();
-            window.location = "./";
+            window.location = "./index.php?id=" + localStorage.id;
         });
     });
 </script>

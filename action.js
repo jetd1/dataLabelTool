@@ -42,6 +42,8 @@ $(document).ready(() => {
     if (!localStorage.id) {
         window.location = "./setName.html";
         return;
+    } else {
+        window.location = "./index.php?id=" + localStorage.id;
     }
     let labelSet = [];
     let baseImg = $("#baseImg")[0];
