@@ -26,7 +26,7 @@
         $row = mysqli_fetch_array($result);
         $label_cnt = ((int) $row['LABEL_CNT']) + 1;
         $label = substr($row['LABEL'], 0, strlen($row['LABEL']) - 1);
-        if ($label_cnt == 1)
+        if ($label_cnt > 1)
             $label = $label . ",";
         $label = $label . $cur_label . "]";
         $ffu = unserialize($row['FFU']);
