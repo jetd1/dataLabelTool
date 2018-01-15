@@ -9,6 +9,10 @@
     left: 0;
 }
 
+#dataForm {
+    display: none;
+}
+
 #workshop {
     position: relative;
     top: 0;

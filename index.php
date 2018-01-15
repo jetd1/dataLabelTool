@@ -7,7 +7,6 @@
     } else if (!in_array($_GET['id'], $id_arr)) {
         echo '<script>delete localStorage.id;</script>';
     }
-    
 ?>
 <html>
 <head>
@@ -32,6 +31,11 @@
         <button id="revBtn">撤销</button>&nbsp<button id="resetBtn">重置</button><br/>
         <button id="skipBtn">跳过</button>&nbsp<button id="finBtn">完成</button>
     </div>
+    <form id="dataForm" method="post">
+        <input type="text" id="imgSrcBox" name="imgSrc">
+        <input type="text" id="labelBox" name="labelString">
+        <input type="text" id="idBox" name="idString">
+    </form>
 </div>
 
 </body>

@@ -178,15 +178,20 @@ $(document).ready(() => {
         let baseImgSrc = baseImg.src;
         let data = {
             tag: baseImgSrc.substr(baseImgSrc.lastIndexOf("/") + 1),
-            label: labelSet
+            label: labelSet,
+            userID: localStorage.id
         };
-        let historyData = eval(localStorage.STRUCT304);
-        if (!historyData)
-            historyData = [];
-        historyData.push(data);
-        localStorage.STRUCT304 = JSON.stringify(historyData);
-        alert("保存成功！（在浏览器终端输入eval(localStorage.STRUCT304)即可查看）");
-        console.log("目前已保存的信息（JSON）：");
-        console.log(eval(localStorage.STRUCT304))
+        $("#imgSrcBox")[0].value = baseImgSrc.substr(baseImgSrc.lastIndexOf("/") + 1);
+        $("#labelBox")[0].value = JSON.stringify(data);
+        $("#idBox")[0].value = localStorage.id;
+        $("#dataForm").submit();
+        // let historyData = eval(localStorage.STRUCT304);
+        // if (!historyData)
+        //     historyData = [];
+        // historyData.push(data);
+        // localStorage.STRUCT304 = JSON.stringify(historyData);
+        // alert("保存成功！（在浏览器终端输入eval(localStorage.STRUCT304)即可查看）");
+        // console.log("目前已保存的信息（JSON）：");
+        // console.log(eval(localStorage.STRUCT304))
     });
 });
