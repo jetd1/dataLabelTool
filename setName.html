@@ -16,10 +16,10 @@
 </div>
 <script>
     $(document).ready(() => {
-        $("#submitBtn").onclick(() => {
+        $("#submitBtn").onclick = () => {
             localStorage.id = $("name").value;
             window.location = "./";
-        })
+        };
     });
 </script>
 </body>
