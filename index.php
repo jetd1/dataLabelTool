@@ -53,7 +53,7 @@
     <div id="workshopDiv">
         <img id="baseImg" src="./data/"
         <?php
-            echo "0000.jpg";
+            echo "0000.jpg\"";
         ?>
         />
         <canvas id="workshop"></canvas>
