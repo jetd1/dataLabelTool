@@ -1,3 +1,10 @@
+<?php
+    require('safe.php');
+    if (!isset($_GET['id']) or $_GET['id'] == '') {
+        echo '<script>window.location = "./index.php?id=" + localStorage.id;</script>';
+        die();
+    }
+?>
 <html>
 <head>
     <meta charset="utf-8"/>
