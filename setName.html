@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Set Name</title>
+</head>
+<body>
+<div id="bigDiv">
+    <form id="nameForn">
+        <p>请输入您被分配的id: <input type="text" id="name" /></p>
+        <button id="submitBtn">提交</button>
+    </form>
+</div>
+<script>
+    $(document).ready(() => {
+        $("#submitBtn").onclick(() => {
+            localStorage.id = $("name").value;
+            window.location = "./";
+        })
+    });
+</script>
+</body>
+</html>

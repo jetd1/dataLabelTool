@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="action.js"></script>
+    <title>快乐标数据</title>
 </head>
 <body>
 

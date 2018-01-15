@@ -39,6 +39,10 @@ function clearCanvasDrawSet(ctx, set) {
 }
 
 $(document).ready(() => {
+    if (!localStorage.id) {
+        window.location = "./setName.html";
+        return;
+    }
     let labelSet = [];
     let baseImg = $("#baseImg")[0];
     // console.log(baseImg.crossOrigin);
