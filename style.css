@@ -1,9 +1,25 @@
+/*
+    Important, start:
+    make sure the workshop canvas
+    perfectly covers on the image
+*/
 #baseImg {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
+#workshop {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+/*
+    Important, end
+*/
+
 #bigDiv {
-    position: absolute;
+    position: relative;
     top: 100px;
     left: 100px;
 }
@@ -15,6 +31,7 @@
 
 #toolsDiv {
     padding-left: 20px;
+    padding-top: 20px;
     display: block;
     float: left;
 }
