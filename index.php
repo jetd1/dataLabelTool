@@ -53,7 +53,7 @@
     <div id="workshopDiv">
         <img id="baseImg" src=
         <?php
-            echo "./data/0000.jpg";
+            echo "./data/0001.jpg";
         ?>
         />
         <canvas id="workshop"></canvas>
@@ -61,7 +61,9 @@
     <div id="toolsDiv">
         <input type="radio" class="toolSel" name="toolType" value="0" checked/>&nbsp点工具 <br/>
         <input type="radio" class="toolSel" name="toolType" value="1"/>&nbsp圆工具（对径点）<br/>
-        <input type="radio" class="toolSel" name="toolType" value="2"/>&nbsp圆工具（圆心-圆周）<br/><br/>
+        <input type="radio" class="toolSel" name="toolType" value="2"/>&nbsp圆工具（圆心-圆周）<br/><br/><br/>
+        <input type="checkbox" id="haveLeft">左边
+        <input type="checkbox" id="haveRight">右边
         <button id="revBtn">撤销</button>&nbsp<button id="resetBtn">重置</button><br/>
         <button id="skipBtn">跳过</button>&nbsp<button id="finBtn">完成</button>
     </div>
@@ -70,6 +72,7 @@
         <input type="text" id="labelBox" name="labelString">
         <input type="text" id="idBox" name="idString">
     </form>
+
 </div>
 
 </body>

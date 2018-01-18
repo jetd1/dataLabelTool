@@ -195,3 +195,16 @@ $(document).ready(() => {
         // console.log(eval(localStorage.STRUCT304))
     });
 });
+
+// data = [
+//     {
+//         tag: '0001.jpg',
+//         label: {
+//             left: [12],
+//             right: [12]
+//         },
+//         userID: 'hyy'
+//     }, 
+//     ... 
+// ];
+
