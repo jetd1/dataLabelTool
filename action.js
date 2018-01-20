@@ -1,7 +1,13 @@
 let colorList = [
-    'blue', 'red', 'coral', 'yellow',
-    'green', 'lime', 'violet', 'brown',
-    'aqua', 'olive', 'purple', 'teal'
+    'red',
+
+    'coral', 'blue', 'yellow', 
+    'green', 'lime', 'brown',
+    'aqua', 'olive', 'teal',
+
+    'coral', 'blue', 'yellow', 
+    'green', 'lime', 'brown',
+    'aqua', 'olive', 'teal'
 ];
 
 function Circle(cx, cy, r) {
@@ -38,7 +44,7 @@ function clearCanvasDrawSet(ctx, set) {
     }
 }
 
-$(document).ready(() => {
+$(document).ready(setTimeout(() => {
     if (!localStorage.id) {
         window.location = "./setName.html";
         return;
@@ -54,6 +60,7 @@ $(document).ready(() => {
     // ctx.drawImage(baseImg, 0, 0);
     ctx.fillStyle = ctx.strokeStyle = "red";
     ctx.lineWidth = 2;
+    $("#toolsDiv").css("display", "block");
 
     let POINT_TOOL = 0,
         CIRCLE_D_TOOL = 1,
@@ -176,15 +183,31 @@ $(document).ready(() => {
 
     $("#finBtn").on("click", () => {
         let baseImgSrc = baseImg.src;
+        let center = labelSet[0];
+        let left = [], right = [];
+        if ($("#haveLeft")[0].checked) {
+            left = labelSet.slice(1, 10);
+            if ($("#haveRight")[0].checked)
+                right = labelSet.slice(10, 19);
+        } else if ($("#haveRight")[0].checked)
+            right = labelSet.slice(1, 10);
         let data = {
             tag: baseImgSrc.substr(baseImgSrc.lastIndexOf("/") + 1),
-            label: labelSet,
+            label: {
+                center: center,
+                left: left,
+                right: right
+            },
             userID: localStorage.id
         };
         $("#imgSrcBox")[0].value = baseImgSrc.substr(baseImgSrc.lastIndexOf("/") + 1);
         $("#labelBox")[0].value = JSON.stringify(data);
         $("#idBox")[0].value = localStorage.id;
+
+        // console.log(data);
         $("#dataForm").submit();
+        
+
         // let historyData = eval(localStorage.STRUCT304);
         // if (!historyData)
         //     historyData = [];
@@ -194,7 +217,7 @@ $(document).ready(() => {
         // console.log("目前已保存的信息（JSON）：");
         // console.log(eval(localStorage.STRUCT304))
     });
-});
+}, 1000));
 
 // data = [
 //     {

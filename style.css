@@ -4,9 +4,10 @@
     perfectly covers on the image
 */
 #baseImg {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 
 #dataForm {
@@ -14,9 +15,10 @@
 }
 
 #workshop {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
 }
 /*
     Important, end
