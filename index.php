@@ -13,7 +13,7 @@
         $cur_label = $_POST['labelString'];
         $img = $_POST['imgSrc'];
 
-        $database = mysqli_connect("localhost", "root", "JmsBryan123")
+        $database = mysqli_connect("localhost", "root", "password")
         or die("无法连接到数据库，请联系   jet@pku.edu.cn. err1");
         mysqli_select_db($database, "STRUCT")
         or die("无法选择数据库，请联系   jet@pku.edu.cn. err2");
